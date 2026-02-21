@@ -1,0 +1,14 @@
+{
+  "name": "session-demo",
+  "version": "1.0.0",
+  "description": "Demo of HSTS with and without implementation",
+  "main": "safe-session.js",
+  "scripts": {
+    "safe-session": "node safe-session.js",
+    "unsafe-session": "node unsafe-session.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.0.0"
+  }
+}

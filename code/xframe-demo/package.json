@@ -1,0 +1,14 @@
+{
+  "name": "xframe-demo",
+  "version": "1.0.0",
+  "description": "X-Frame-Options Clickjacking Demo",
+  "scripts": {
+    "start-unsafe": "node server-unsafe.js",
+    "start-safe": "node server-safe.js",
+    "start-attacker": "node attacker-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.0.0"
+  }
+}

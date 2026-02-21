@@ -1,0 +1,13 @@
+{
+  "name": "csp-demo",
+  "version": "1.0.0",
+  "description": "CSP XSS Protection Demo",
+  "scripts": {
+    "start-unsafe": "node server-unsafe.js",
+    "start-safe": "node server-safe.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.0.0"
+  }
+}
