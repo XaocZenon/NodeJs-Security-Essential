@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Nexus Bank</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">NEXUSBANK</div>
+                <div class="user-info">
+                    <span><%= user.username %></span>
+                    <a class="btn-logout" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="dashboard-content">
+            <% if (message) { %>
+                <div class="alert <%= message.type %>"><%= message.text %></div>
+            <% } %>
+            <div class="welcome-card">
+                <h1>Welcome, <%= user.fullName || user.username %></h1>
+                <p>Welcome to your Nexus Bank dashboard</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Account Balance</h3>
+                    <div class="value" id="balance"><%= user.balance %> تومان</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Account Number</h3>
+                    <div class="value" id="accountNumber" style="font-size: 18px;">ACC-<%= String(user.id).padStart(6, '0') %></div>
+                </div>
+            </div>
+            
+            <div class="transactions">
+                <h3>Email</h3>
+                <div class="transaction-item">
+                    <div class="transaction-desc"><%= user.email %></div>
+                </div>
+                <div class="transaction-item">
+                <h3>Change Email</h3>
+                <form action="/change-email" method="post" style="margin-top:8px;">
+                    <input type="email" name="email" placeholder="New email" required />
+                    <button type="submit">Change Email</button>
+                </form>
+                </div>
+                <div class="transaction-item">
+                <h3 style="margin-top:16px;">Transfer Funds</h3>
+                <form action="/transfer" method="post" style="margin-top:8px;">
+                    <input type="text" name="to" placeholder="Recipient username" required />
+                    <input type="number" name="amount" placeholder="Amount" min="1" required />
+                    <button type="submit">Send</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

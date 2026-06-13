@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Nexus Bank</title>
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">NEXUSBANK</div>
+        <h2>Welcome back</h2>
+        
+        <% if (errorMessage) { %>
+            <div class="error-message"><%= errorMessage %></div>
+        <% } %>
+        
+        <form id="loginForm" action="/login" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter your username" required value="<%= formData.username || '' %>">
+            </div>
+            
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit" class="btn-login">Sign In</button>
+        </form>
+        
+        <div class="register-link">
+            Don't have an account? <a href="/register">Create one</a>
+        </div>
+        
+        <div class="demo-info">
+            <strong>📝 Demo Credentials:</strong><br>
+            Username: user1<br>
+            Password: pass123
+        </div>
+        
+        <div class="back-home">
+            <a href="/">← Back to home</a>
+        </div>
+    </div>
+</body>
+</html>

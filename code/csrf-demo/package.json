@@ -1,0 +1,26 @@
+{
+  "name": "csrf-demo",
+  "version": "1.0.0",
+  "description": "learn preventing csrf in express",
+  "main": "server-safe.js",
+  "scripts": {
+    "start-vulnerable": "node server-vun.js",
+    "start-secure": "node server-safe.js",
+    "start-attacker": "node attacker-server.js"
+  },
+  "dependencies": {
+    "csurf": "^1.11.0",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.17.3",
+    "helmet": "^7.0.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [],
+  "author": "Chaos",
+  "license": "ISC",
+  "type": "commonjs"
+}
