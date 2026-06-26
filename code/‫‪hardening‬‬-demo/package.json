@@ -1,7 +1,7 @@
 {
   "name": "hardening-demo",
   "version": "1.0.0",
-  "description": "Vulnerability Demo",
+  "description": "Learn Hardening in Express.js - Node.js Security Essential series",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -9,4 +9,25 @@
   "dependencies": {
     "express": "^4.18.2"
   }
+    "keywords": [
+    "Hardening",
+    "security",
+    "express",
+    "nodejs",
+    "web-security",
+    "cybersecurity",
+    "owasp",
+    "secure-coding"
+  ],
+  "author": "Chaos Nexus Tech",
+  "license": "ISC",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential/issues"
+  },
+  "homepage": "https://github.com/XaocZenon/NodeJs-Security-Essential#readme"
 }

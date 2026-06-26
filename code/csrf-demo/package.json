@@ -1,7 +1,8 @@
 {
   "name": "csrf-demo",
   "version": "1.0.0",
-  "description": "learn preventing csrf in express",
+  "private": true,
+  "description": "Learn preventing CSRF in Express.js - Node.js Security Essential series",
   "main": "server-safe.js",
   "scripts": {
     "start-vulnerable": "node server-vun.js",
@@ -19,8 +20,27 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "keywords": [],
-  "author": "Chaos",
+  "keywords": [
+    "csrf",
+    "security",
+    "express",
+    "nodejs",
+    "web-security",
+    "cross-site-request-forgery",
+    "csrf-protection",
+    "cybersecurity",
+    "owasp",
+    "secure-coding"
+  ],
+  "author": "Chaos Nexus Tech",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential/issues"
+  },
+  "homepage": "https://github.com/XaocZenon/NodeJs-Security-Essential#readme"
 }

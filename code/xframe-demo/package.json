@@ -1,7 +1,7 @@
 {
   "name": "xframe-demo",
   "version": "1.0.0",
-  "description": "X-Frame-Options Clickjacking Demo",
+  "description": "Learn X-Frame-Options & preventing Clickjacking in Express.js - Node.js Security Essential series",
   "scripts": {
     "start-unsafe": "node server-unsafe.js",
     "start-safe": "node server-safe.js",
@@ -11,4 +11,25 @@
     "express": "^4.18.2",
     "helmet": "^7.0.0"
   }
+    "keywords": [
+    "xframe",
+    "security",
+    "express",
+    "nodejs",
+    "web-security",
+    "cybersecurity",
+    "owasp",
+    "secure-coding"
+  ],
+  "author": "Chaos Nexus Tech",
+  "license": "ISC",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential/issues"
+  },
+  "homepage": "https://github.com/XaocZenon/NodeJs-Security-Essential#readme"
 }

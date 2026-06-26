@@ -3,19 +3,21 @@ This repo is for NodeJs Security Essential series that are uploaded in the Youtu
 
 # File flow
 NodeJs-Security-Essential/
-├── code/                # sample code are here
+├── code/ # Sample code for each security topic
+│ ├── csp-demo
+│ ├── csrf-demo
+│ ├── hardening-demo
+│ ├── hsts-demo
+│ ├── session-demo
+│ └── xframe-demo
 │
+├── pdf/ # PDF documentation of each video
+│ ├── chapter-1.pdf
+│ ├── chapter-2.pdf
+│ └── ...
 │
-│
-│
-├── pdf/                 # pdf docs of what have been told is in here
-│
-│
-│
-│
-│
-├── .gitingnore          # because of this you should install node modules your self
-└── readme.md
+├── .gitignore # Ignore node_modules and other files
+└── README.md # This file
 
 ## Stack of this repo
 [![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB)](#)

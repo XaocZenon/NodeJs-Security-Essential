@@ -1,7 +1,8 @@
 {
   "name": "csp-demo",
   "version": "1.0.0",
-  "description": "CSP XSS Protection Demo",
+  "private": true,
+  "description": "Learn CSP in Express.js - Node.js Security Essential series",
   "scripts": {
     "start-unsafe": "node server-unsafe.js",
     "start-safe": "node server-safe.js"
@@ -10,4 +11,25 @@
     "express": "^4.18.2",
     "helmet": "^7.0.0"
   }
+    "keywords": [
+    "CSP",
+    "security",
+    "express",
+    "nodejs",
+    "web-security",
+    "cybersecurity",
+    "owasp",
+    "secure-coding"
+  ],
+  "author": "Chaos Nexus Tech",
+  "license": "ISC",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential/issues"
+  },
+  "homepage": "https://github.com/XaocZenon/NodeJs-Security-Essential#readme"
 }

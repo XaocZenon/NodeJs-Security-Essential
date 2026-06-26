@@ -1,7 +1,7 @@
 {
   "name": "hsts-demo",
   "version": "1.0.0",
-  "description": "Demo of HSTS with and without implementation",
+  "description": "Learn HSTS in Express.js - Node.js Security Essential series",
   "main": "server-with-hsts.js",
   "scripts": {
     "start-with-hsts": "node server-with-hsts.js",
@@ -11,4 +11,25 @@
     "express": "^4.18.2",
     "helmet": "^7.0.0"
   }
+    "keywords": [
+    "hsts",
+    "security",
+    "express",
+    "nodejs",
+    "web-security",
+    "cybersecurity",
+    "owasp",
+    "secure-coding"
+  ],
+  "author": "Chaos Nexus Tech",
+  "license": "ISC",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XaocZenon/NodeJs-Security-Essential/issues"
+  },
+  "homepage": "https://github.com/XaocZenon/NodeJs-Security-Essential#readme"
 }

