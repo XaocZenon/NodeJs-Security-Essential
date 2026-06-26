@@ -1,20 +1,32 @@
 {
-  "name": "hardening-demo",
+  "name": "xss-demo",
   "version": "1.0.0",
-  "description": "Learn Hardening in Express.js - Node.js Security Essential series",
+  "description": "Learn preventing XSS in Express.js - Node.js Security Essential series",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "vuln": "node server-vuln.js",
+    "safe": "node server-safe.js",
+    "dev:vuln": "nodemon server-vuln.js",
+    "dev:safe": "nodemon server-safe.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2",
+    "xss-filters": "^1.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   },
     "keywords": [
-    "Hardening",
+    "XSS",
     "security",
     "express",
     "nodejs",
     "web-security",
+    "cross-site-scripting",
     "cybersecurity",
     "owasp",
     "secure-coding"

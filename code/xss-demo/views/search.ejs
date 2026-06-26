@@ -1,0 +1,49 @@
+<%- include('partials/header', { title: title, query: query }) %>
+
+<div class="container">
+    <div class="search-results">
+        <!-- VULNERABLE: Displaying search query directly -->
+        <h2>Search Results for "<%- query %>"</h2>
+        <!-- The line above is VULNERABLE to XSS if query contains scripts -->
+        <!-- Using <%= %> escapes HTML automatically -->
+
+        
+        <% if (message) { %>
+            <div class="no-results">
+                <p><%= message %></p>
+                <p style="margin-top: 1rem;">
+                    <a href="/">Browse all products</a>
+                </p>
+            </div>
+        <% } else if (items.length > 0) { %>
+            <p><%= items.length %> product(s) found</p>
+            <div class="product-grid">
+                <% items.forEach(item => { %>
+                    <div class="product-card">
+                        <div class="product-image">
+                            📦 Product Image
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">
+                                <a href="/item/<%= item.slug %>"><%= item.name %></a>
+                            </h3>
+                            <div class="product-category"><%= item.category %></div>
+                            <div class="product-price">$<%= item.price.toFixed(2) %></div>
+                            <div class="product-stock">In Stock: <%= item.stock %></div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <div class="no-results">
+                <p>No products found matching "<%- query %>"</p>
+                <!-- The line above is VULNERABLE to XSS -->
+                <p style="margin-top: 1rem;">
+                    <a href="/">Browse all products</a>
+                </p>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

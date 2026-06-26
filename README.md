@@ -2,6 +2,7 @@
 This repo is for NodeJs Security Essential series that are uploaded in the Youtube
 
 # File flow
+```
 NodeJs-Security-Essential/
 ├── code/ # Sample code for each security topic
 │ ├── csp-demo
@@ -18,6 +19,7 @@ NodeJs-Security-Essential/
 │
 ├── .gitignore # Ignore node_modules and other files
 └── README.md # This file
+```
 
 ## Stack of this repo
 [![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB)](#)

@@ -1,0 +1,40 @@
+<%- include('partials/header', { title: title, query: query }) %>
+
+<div class="container">
+    <h1>Welcome to Our Shop</h1>
+    <p>Discover our amazing products</p>
+    
+    <!-- VULNERABLE: Displaying search query without escaping -->
+    <% if (query && query.length > 0) { %>
+        <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px;">
+            <strong>Search results for:</strong> <%- query %>
+            <!-- The line above is VULNERABLE to XSS if query contains scripts -->
+            <!-- <strong>Search results for:</strong> <%= query %>  -->
+            <!-- Using <%= %> escapes HTML automatically -->
+        </div>
+    <% } %>
+    
+    <div class="product-grid">
+        <% if (items.length > 0) { %>
+            <% items.forEach(item => { %>
+                <div class="product-card">
+                    <div class="product-image">
+                        📦 Product Image
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">
+                            <a href="/item/<%= item.slug %>"><%= item.name %></a>
+                        </h3>
+                        <div class="product-category"><%= item.category %></div>
+                        <div class="product-price">$<%= item.price.toFixed(2) %></div>
+                        <div class="product-stock">In Stock: <%= item.stock %></div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No products available.</p>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,87 @@
+<%- include('partials/header', { title: title, query: '' }) %>
+
+<div class="container">
+    <div class="item-detail">
+        <div class="item-header">
+            <h1 class="item-title"><%= item.name %></h1>
+            <div class="item-price-large">$<%= item.price.toFixed(2) %></div>
+        </div>
+        
+        <div class="item-meta">
+            <span>Category: <%= item.category %></span>
+            <span>In Stock: <%= item.stock %></span>
+            <span>SKU: #<%= item.id %></span>
+        </div>
+        
+        <div class="item-rating" id="comments">
+            <span class="stars">★</span>
+            <span class="rating-number"><%= rating %> / 5.0</span>
+            <span>(<%= comments.length %> reviews)</span>
+        </div>
+        
+        <div class="item-description">
+            <p><%= item.description %></p>
+        </div>
+        
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <h3>Reviews & Comments</h3>
+            
+            <!-- Add Comment Form -->
+            <div class="comment-form">
+                <h4>Add Your Review</h4>
+                <form action="/item/<%= item.slug %>/comment" method="POST">
+                    <div class="form-group">
+                        <label for="username">Your Name</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <select id="rating" name="rating" required>
+                            <option value="5">★★★★★ - Excellent</option>
+                            <option value="4">★★★★ - Good</option>
+                            <option value="3">★★★ - Average</option>
+                            <option value="2">★★ - Poor</option>
+                            <option value="1">★ - Terrible</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Your Review</label>
+                        <textarea id="comment" name="comment" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                </form>
+            </div>
+            
+            <!-- Comments List -->
+            <div class="comment-list">
+                <% if (comments.length > 0) { %>
+                    <% comments.forEach(comment => { %>
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <span class="comment-username"><%= comment.username %></span>
+                                <span class="comment-rating">★ <%= comment.rating %> / 5</span>
+                                <span class="comment-date">
+                                    <%= new Date(comment.created_at).toLocaleDateString() %>
+                                </span>
+                            </div>
+                            <!-- VULNERABLE: Displaying comment without sanitization -->
+                            <!-- This allows Stored XSS attacks -->
+                            <div class="comment-text">
+                                <%- comment.comment %>
+                                <!-- The line above is VULNERABLE to Stored XSS -->
+                                <!-- Using <%= %> escapes any remaining HTML -->
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p style="color: #7f8c8d; text-align: center; padding: 2rem;">
+                        No reviews yet. Be the first to review this product!
+                    </p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
