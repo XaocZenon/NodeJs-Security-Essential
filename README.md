@@ -10,12 +10,11 @@ NodeJs-Security-Essential/
 │ ├── hardening-demo
 │ ├── hsts-demo
 │ ├── session-demo
-│ └── xframe-demo
+│ ├── xframe-demo
+│ └── xss-demo
 │
-├── pdf/ # PDF documentation of each video
-│ ├── chapter-1.pdf
-│ ├── chapter-2.pdf
-│ └── ...
+├── pdf/ # PDF documentation of videos
+│ └── Essential NodeJS Security (in Express).pdf
 │
 ├── .gitignore # Ignore node_modules and other files
 └── README.md # This file
